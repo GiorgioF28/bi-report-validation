@@ -1,0 +1,5 @@
+campaign_id,customer_email,clicks,conversions
+CAMP001,mario.rossi@email.com,45,5
+CAMP002,anna.bianchi@email.com,120,12
+CAMP003,luca.verdi@email.com,30,3
+CAMP004,giulia.neri@email.com,80,8
