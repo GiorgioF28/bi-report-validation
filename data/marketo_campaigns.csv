@@ -1,0 +1,4 @@
+campaign_id,customer_id,campaign_name,status
+2001,1,Q1 Upsell,active
+2002,2,Retention,completed
+2003,4,New Product,active
