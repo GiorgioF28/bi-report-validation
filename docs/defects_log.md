@@ -1,3 +1,2 @@
-# Defects Log
-
-- Track identified issues and fixes here.
+- Defect #1: Duplicato ordine 1004 in SAP (trovato con duplicates.sql)
+- Defect #2: Cliente senza vendite (missing_customers.sql)

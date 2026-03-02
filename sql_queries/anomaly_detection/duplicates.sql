@@ -1,4 +1,4 @@
-SELECT customer_id, COUNT(*) as occurrences
-FROM sap_sales
-GROUP BY customer_id
+SELECT order_id, COUNT(*) AS duplicate_count
+FROM sap
+GROUP BY order_id
 HAVING COUNT(*) > 1;
