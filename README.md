@@ -1,27 +1,82 @@
 # BI Report Validation Framework
 
-SQL testing suite per validare report BI contro fonti simulate (CRM, SAP, Marketo).
+Framework SQL + Python per validare report BI su dataset simulati (CRM, SAP, Marketo).
 
-## Descrizione progetto
-Built a complete SQL testing suite to validate business reports against simulated CRM, SAP and Marketo data sources.
+## Obiettivo
+Dimostrare un flusso end-to-end di BI testing:
+- data reconciliation
+- anomaly detection
+- business rule validation
+- generazione automatica report CSV
 
-## Features
-- 50+ reusable queries for data reconciliation, anomaly detection and business rule checks (SELECT, JOIN, aggregations)
-- Performed full manual validation cycle and documented defects and test cases
-- Python automation script that runs all checks and generates reports
-- Reduced validation time by 40% with structured test approach (da 2 ore manuali a 45 minuti)
+## Stack
+- SQL (SQLite)
+- Python (`pandas`, `sqlite3`)
+- Git / GitHub
 
-## Technologies
-SQL · Python (pandas + sqlite3) · Excel · Git
+## Struttura progetto
+```text
+bi-report-validation-main/
+  data/
+    crm_customers.csv
+    sap_sales.csv
+    marketo_campaigns.csv
+  sql_queries/
+    reconciliation/
+    anomaly_detection/
+    business_rules/
+  python/
+    validate_reports.py
+  reports/
+  docs/
+```
 
-## Come usare
-1. `git clone ...`
-2. `pip install pandas`
-3. `python python/validate_reports.py`
-4. Controlla cartella `reports/`
+## Query incluse
+- `reconciliation/total_revenue_check.sql`
+- `reconciliation/missing_customers.sql`
+- `anomaly_detection/duplicates.sql`
+- `anomaly_detection/possible_fraud_orders.sql`
+- `anomaly_detection/campaign_outliers.sql`
+- `business_rules/high_value_orders.sql`
+- `business_rules/customer_engagement_gap.sql`
 
-## Esempi
-- [Total revenue reconciliation](sql_queries/reconciliation/total_revenue_check.sql)
-- [Defects log](docs/defects_log.md)
+## Come eseguire
+1. Installa dipendenze:
+```bash
+pip install pandas
+```
+2. Esegui validazione:
+```bash
+python python/validate_reports.py
+```
+3. Controlla output in `reports/`.
 
-Perfetto per ruoli QA Analyst / BI Testing.
+## Output attesi (dataset corrente)
+- `duplicates_result.csv`: order_id duplicati
+- `possible_fraud_orders_result.csv`: clienti con ordini high-value sospetti
+- `campaign_outliers_result.csv`: campagne con anomalie di conversione
+- `high_value_orders_result.csv`: ordini > 300
+- `customer_engagement_gap_result.csv`: clienti con gap ordini/campagne
+- `missing_customers_result.csv`: clienti CRM senza vendite
+- `total_revenue_check_result.csv`: riconciliazione totale ricavi
+
+## Come pubblicarlo su GitHub
+1. Inizializza repo locale (se non fatto):
+```bash
+git init
+git add .
+git commit -m "Initial BI validation framework"
+```
+2. Crea repository su GitHub (es. `bi-report-validation-framework`).
+3. Collega remote e push:
+```bash
+git remote add origin <URL_REPO>
+git branch -M main
+git push -u origin main
+```
+4. Aggiorna la descrizione repo con keyword: `sql`, `bi-testing`, `data-quality`, `qa`.
+
+## Miglioramenti consigliati
+- aggiungere test automatici (pytest) sulle query chiave
+- parametrizzare soglie anomalie via file config
+- aggiungere CI (GitHub Actions) per eseguire validazione a ogni push

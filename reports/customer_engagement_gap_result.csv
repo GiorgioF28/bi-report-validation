@@ -1,0 +1,4 @@
+customer_id,customer_name,email,order_count,campaign_count,gap_type
+5,Marco Blu,marco.blu@email.com,0,0,No Orders + No Campaign
+6,Sara Gialli,sara.gialli@email.com,0,1,No Orders
+8,Elena Viola,elena.viola@email.com,0,0,No Orders + No Campaign

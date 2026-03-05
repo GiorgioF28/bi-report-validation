@@ -1,0 +1,7 @@
+order_id,customer_id,amount,order_date,order_category
+1005,4,450.0,2024-03-20,High Value
+1006,2,725.0,2024-04-01,High Value
+1007,7,315.0,2024-04-11,High Value
+1008,4,980.0,2024-04-22,High Value
+1009,4,650.0,2024-04-23,High Value
+1010,2,550.0,2024-04-25,High Value

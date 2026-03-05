@@ -1,0 +1,3 @@
+campaign_id,customer_email,clicks,conversions,conversion_rate,anomaly_type
+CAMP007,lead.nuovo@email.com,150,0,0.0,Zero Conversion Anomaly
+CAMP008,anna.bianchi@email.com,10,15,1.5,Data Quality Issue

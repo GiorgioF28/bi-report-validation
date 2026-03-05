@@ -1,4 +1,4 @@
-SELECT c.customer_id, c.customer_name
-FROM crm c
-LEFT JOIN sap s ON c.customer_id = s.customer_id
-WHERE s.customer_id IS NULL;
+SELECT c.customer_name, c.email
+    FROM crm c
+    LEFT JOIN sap s ON c.customer_id = s.customer_id
+    WHERE s.order_id IS NULL

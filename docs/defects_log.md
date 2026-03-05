@@ -1,2 +1,5 @@
-- Defect #1: Duplicato ordine 1004 in SAP (trovato con duplicates.sql)
-- Defect #2: Cliente senza vendite (missing_customers.sql)
+- Defect #1: Duplicate order_id in SAP (`1002`, `1003`) rilevati da `duplicates.sql`
+- Defect #2: Clienti CRM senza vendite (`Marco Blu`, `Sara Gialli`, `Elena Viola`) rilevati da `missing_customers.sql`
+- Defect #3: Campagna con conversioni incoerenti (`CAMP008`: conversions > clicks) rilevata da `campaign_outliers.sql`
+- Defect #4: Campagna ad alto traffico senza conversioni (`CAMP007`) rilevata da `campaign_outliers.sql`
+- Defect #5: Cluster ordini high-value sospetti per `customer_id 2` e `4` rilevati da `possible_fraud_orders.sql`
